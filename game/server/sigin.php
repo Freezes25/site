@@ -1,7 +1,9 @@
 <?php
 
 session_start();
-if($_SESSION['users']){
+
+
+if(array_key_exists('users',$_SESSION)){
     header('../game.php');
 }
 require_once('db.php');
@@ -31,7 +33,10 @@ $query = $pdo->query($sql);
 
 if($query->rowCount() > 0){
     $users = $query->fetch(PDO::FETCH_ASSOC);
+
+    //Тут ты не положил в массив id пользователя, а в итоге его вызывал
     $_SESSION['users'] = [
+        'id' => $users['id'],
         'login' => $users['login'],
         'name'=>$users['name'],
         'email'=>$users['email'],

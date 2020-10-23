@@ -123,17 +123,21 @@ function endGame(){
 }
 $('.btn_game').click((e) => {
     e.preventDefault();
+
+    //
     let scoreGame = $(`input[name="score"]`).val();
+    console.log(scoreGame)
     $.ajax({
         url: '../server/game.php',
         type: 'POST',
         dataType: 'json',
         data:{
-            scoreGame: scoreGame
+            score: scoreGame
         },
         success: function(data){
-        //    document.location.href = '../server/game.php';
+            console.log(12);
+            document.location.href = 'game.php';
         }
     });
- 
+
  });

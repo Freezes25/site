@@ -1,7 +1,10 @@
-<?php 
+<?php
 session_start();
 require_once('server/db.php');
-if(!$_SESSION['users']){
+
+//Твой метод проверки на версии php 7.4 выдает ошибку, лучше использовать проверку на наличие ключа
+
+if(!array_key_exists('users',$_SESSION)){
     header('Location: sigin.php');
 }
 ?>
@@ -18,16 +21,16 @@ if(!$_SESSION['users']){
 <a href="server/exit.php">Выйти</a>
 </header>
 <form class="endGame" method="POST" action="server/game.php">
-    
+
     <label>Вы проиграли</label>
     <div class="score">
-    <span>Ваш счет: <input readonly class="scoreGame" name="scoreGame"></span>
+    <span>Ваш счет: <input readonly class="scoreGame" name="score"></span>
     </div>
     <button type="submit" class="btn_game">Перезапустить?</button>
 </form>
 <canvas id="canv" width="608px" height="608px" style="border: 2px solid red; margin: 0 auto; display: block; cursor: pointer;">
 </canvas>
-    <script src="script/game.js"></script>
     <script src="script/jquery.js"></script>
+    <script src="script/game.js"></script>
 </body>
 </html>

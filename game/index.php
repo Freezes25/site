@@ -1,6 +1,8 @@
 <?php
 session_start();
-if($_SESSION['users']){
+
+//Твой метод проверки на версии php 7.4 выдает ошибку, лучше использовать проверку на наличие ключа
+if(array_key_exists('users',$_SESSION)){
     header('location: ../game.php');
 }
 ?>
