@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+.bacground_sigin{
+    display: block;
+    background: url(../img/bg.png) no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 1180px;
+    padding-top: 200px;
+    form{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba($color: #140730, $alpha: 0.5);
+        width: 546px;
+        height: 705px;
+        margin: 0 auto;
+        padding: 62px 0 0 0;
+    }
+    .title{
+        color: #fff;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    label{
+        margin-top: 30px;
+        color: #fff;
+        font-size: 21px;
+        font-weight: 600;
+    }
+    button{
+        margin-top: 30px;
+        color: #fff;
+        font-size: 21px;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        width: 264px;
+        height: 74px;
+        background-color: #150D43;
+        transition: all 0.5s;
+        &:hover{
+            background-color: #2a1d70;
+        }
+    }
+    input{
+        color: #fff;
+        background: none;
+        outline: none;
+        width: 264px;
+        border: none;
+        border-bottom: 2px solid #e3e3e3;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    .registration{
+        color: #fff;
+        max-width: 264px;
+        text-align: center;
+    }
+    .none{
+        display: none;
+    }
+    .error_message{
+        color: #fff;
+        font-size: 17px;
+        border: 2px solid orange;
+        padding: 10px;
+    }
+    .error_sigin{
+        border-bottom: 2px solid red;
+    }
+}
