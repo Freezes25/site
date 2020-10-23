@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+.main_menu{
+    display: block;
+    background: url(../img/bg.png) no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 1180px;
+    padding-top: 200px;
+    
+    .panel_menu{
+        background-color: rgba($color: #140730, $alpha: 0.5);
+        width: 546px;
+        height: 705px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 62px 0 0 0;
+        .title{
+            color: #fff;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .btn_sigin{
+            margin-top: 77px;
+        }
+        .btn_sigup{
+            margin-top: 110px;
+        }
+        button{
+            color: #fff;
+            font-size: 21px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            width: 264px;
+            height: 74px;
+            background-color: #150D43;
+            transition: all 0.5s;
+            &:hover{
+                background-color: #2a1d70;
+            }
+        }
+        .logo{
+            margin-top: 87px;
+            width: 120px;
+            height: 125px;
+            background-color: #150D43;
+            padding-top:48px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 900;
+            color: #fff;
+            border-radius: 100%;
+        }
+    }
+}

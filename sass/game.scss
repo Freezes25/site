@@ -1,0 +1,61 @@
+.endGame{
+    left: 700px;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 500px;
+    background-color: #fff;
+    position: absolute;
+    display: none;
+    .score{
+        text-align: center;
+    }
+    input{
+        text-align: center;
+        outline: none;
+        border: none;
+        background: none;
+        min-width: 20px;
+        max-width: 25px;
+    }
+}
+.pause{
+    font-size: 18px;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    border: 2px solid red;
+    width: 20px;       
+    border-radius: 100%;
+    cursor: pointer;
+    top: 35px;
+    left: 30%;
+    display: none;
+}
+table{
+    margin: 0 auto;
+    th{
+        border: 2px solid #000;
+        padding: 10px;
+    }
+    td{
+        border: 2px solid #000;
+        padding: 10px;
+    }
+}
+.play{
+    font-size: 18px;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    border: 2px solid red;
+    width: 20px;       
+    border-radius: 100%;
+    cursor: pointer;
+    top: 35px;
+    left: 30%;
+    display: none;
+}
