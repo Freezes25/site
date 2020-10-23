@@ -30,6 +30,7 @@ if(!array_key_exists('users',$_SESSION)){
 </form>
 <canvas id="canv" width="608px" height="608px" style="border: 2px solid red; margin: 0 auto; display: block; cursor: pointer;">
 </canvas>
+    <!--Всегда сначала подключаются библиотеки, а потом собственные скрипты, у тебя сначала подключался game.js, а потом jquery-->
     <script src="script/jquery.js"></script>
     <script src="script/game.js"></script>
 </body>
