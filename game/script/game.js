@@ -124,7 +124,7 @@ function endGame(){
 $('.btn_game').click((e) => {
     e.preventDefault();
 
-    //
+    //Внимательно делай поиск, ты назвал свое поле scoreGame, а ищешь score
     let scoreGame = $(`input[name="score"]`).val();
     console.log(scoreGame)
     $.ajax({
