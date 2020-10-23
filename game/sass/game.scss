@@ -22,3 +22,40 @@
         max-width: 25px;
     }
 }
+.pause{
+    font-size: 18px;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    border: 2px solid red;
+    width: 20px;       
+    border-radius: 100%;
+    cursor: pointer;
+    top: 35px;
+    left: 30%;
+    display: none;
+}
+table{
+    margin: 0 auto;
+    th{
+        border: 2px solid #000;
+        padding: 10px;
+    }
+    td{
+        border: 2px solid #000;
+        padding: 10px;
+    }
+}
+.play{
+    font-size: 18px;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    border: 2px solid red;
+    width: 20px;       
+    border-radius: 100%;
+    cursor: pointer;
+    top: 35px;
+    left: 30%;
+    display: none;
+}

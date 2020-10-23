@@ -2,6 +2,8 @@ window.onload = function () {
     canv = document.querySelector("#canv");
     ctx = canv.getContext("2d");
     form = $('.endGame');
+    pause = document.querySelector('.pause');
+    play = document.querySelector('.play');
     box = 32;
      food = {
         x: Math.floor(Math.random() * 17 + 1) * box,
@@ -49,7 +51,7 @@ function eatTail(head,arr){
         if(head.x == arr[i].x && head.y == arr[i].y){
             clearInterval(gameTimer);
             $('.scoreGame').val(score);
-            form.css("display", "block");
+            form.css("display", "flex");
         }
     }
 }
@@ -67,25 +69,26 @@ function game(){
         ctx.fillStyle = '#fff';
         ctx.font = "50px monospace";
         ctx.fillText(score,60,50);
+        pause.style.display = 'block';
         let snakeX = snake[0].x;
         let snakeY = snake[0].y;
         if(snakeX < box || snakeX > box*17 || snakeY < 3 * box || snakeY > box * 17){
             clearInterval(gameTimer);
             $('.scoreGame').val(score);
-            form.css("display", "block");
+            form.css("display", "flex");
         }
-        if(score == 5){
+        if(score >= 5){
             clearInterval(gameTimer);
             gameTimer = setInterval(game,90);
         }
-        if(score == 10){
+        if(score >= 10){
             clearInterval(gameTimer);
             gameTimer = setInterval(game,80);
         }
-        if(score == 15){
+        if(score >= 15){
             clearInterval(gameTimer);
             gameTimer = setInterval(game,70);
-        }if(score == 20){
+        }if(score >= 20){
             clearInterval(gameTimer);
             gameTimer = setInterval(game,60);
         }
@@ -112,21 +115,28 @@ function game(){
             endGame();
         }
     }
-}
-function pause(){
-
+    pause.onclick = function(){
+        clearInterval(gameTimer);
+        pause.style.display = 'none';
+        play.style.display = 'block';
+    }
+    play.onclick = function(){
+        gameTimer = setInterval(game,100);
+        pause.style.display = 'block';
+        play.style.display = 'none';
+    }
 }
 function endGame(){
     clearInterval(gameTimer);
     $('.scoreGame').val(score);
-    form.css("display", "block");
+    form.css("display", "flex");
 }
 $('.btn_game').click((e) => {
     e.preventDefault();
 
     //Внимательно делай поиск, ты назвал свое поле scoreGame, а ищешь score
     let scoreGame = $(`input[name="score"]`).val();
-    console.log(scoreGame)
+    console.log(scoreGame);
     $.ajax({
         url: '../server/game.php',
         type: 'POST',
@@ -136,7 +146,7 @@ $('.btn_game').click((e) => {
         },
         success: function(data){
             console.log(12);
-            document.location.href = 'game.php';
+            document.location.href = '../game.php';
         }
     });
 

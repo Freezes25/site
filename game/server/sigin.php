@@ -4,7 +4,7 @@ session_start();
 
 
 if(array_key_exists('users',$_SESSION)){
-    header('../game.php');
+    header('Location:../game.php');
 }
 require_once('db.php');
 $login = $_POST['login'];
